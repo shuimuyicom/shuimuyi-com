@@ -1,6 +1,6 @@
-# 水木易个人网站 | Shuimuyi.com
+# 水木易个人网站 | shuimuyi.com
 
-这是水木易的个人网站项目，一个现代化的个人作品集和博客网站，由 [Tailwind Plus](https://tailwindcss.com/plus) 模板定制而成。
+这是水木易的个人网站项目，一个现代化的个人项目作品集和博客网站，由 [Tailwind Plus](https://tailwindcss.com/plus) 模板定制而成。
 
 ## 🌟 网站简介
 
