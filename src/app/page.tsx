@@ -294,9 +294,9 @@ export default async function Home() {
             水木易的个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            我是水木易，一名充满热情的 Vibe Coder。作为终身学习者，我在产品管理、
-            哲学思考和中华国学之间不断探索。我相信技术与人文的结合能创造更美好的数字世界，
-            致力于用代码构建有温度、有深度的应用。
+            我是水木易，AI 时代的 Vibe Coder。我在产品管理、
+            哲学思考和中华国学之间不断探索，终身学习是我的人生底色，我相信技术与人文的结合能创造更美好的数字世界，
+            致力于用代码构建有温度的 App。
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -331,7 +331,7 @@ export default async function Home() {
             项目作品
           </h2>
           <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
-            由我亲自打造的一些有趣小项目
+            独立开发 #Build in Public
           </p>
         </div>
         <ul
