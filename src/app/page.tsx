@@ -367,26 +367,21 @@ export default async function Home() {
       </Container>
 
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {/* 文章列表标题和描述 */}
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
-                最新文章
-              </h2>
-              <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
-                欢迎找我交流探讨
-              </p>
-            </div>
+        <div className="mx-auto max-w-none">
+          {/* 文章列表标题和描述 */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
+              最新文章
+            </h2>
+            <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
+              欢迎找我交流探讨
+            </p>
+          </div>
+          {/* 双列文章列表 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* 邮件订阅功能 - 暂时注释 */}
-            {/* <Newsletter /> */}
-            {/* 工作经历展示 - 暂时注释 */}
-            {/* <Resume /> */}
           </div>
         </div>
       </Container>
