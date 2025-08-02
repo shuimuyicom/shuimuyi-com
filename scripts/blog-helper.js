@@ -119,16 +119,18 @@ function getArticleList() {
   return articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
-function createArticleTemplate(title, description) {
+function createArticleTemplate(title, description, slug) {
   const date = new Date().toISOString().split('T')[0];
   
   return `import { ArticleLayout } from '@/components/ArticleLayout'
+import { ArticleWrapper } from '@/components/ArticleWrapper'
 
 export const article = {
   author: '水木易',
   date: '${date}',
   title: '${title}',
   description: '${description}',
+  slug: '${slug}',
 }
 
 export const metadata = {
@@ -136,7 +138,11 @@ export const metadata = {
   description: article.description,
 }
 
-export default (props) => <ArticleLayout article={article} {...props} />
+export default (props) => (
+  <ArticleWrapper article={article}>
+    <ArticleLayout article={article} {...props} />
+  </ArticleWrapper>
+)
 
 在这里开始写你的文章内容...
 
@@ -221,7 +227,7 @@ async function createNewArticle() {
     const articleDir = path.join(process.cwd(), 'src', 'app', 'articles', slug);
     fs.mkdirSync(articleDir, { recursive: true });
     
-    const content = createArticleTemplate(title, description);
+    const content = createArticleTemplate(title, description, slug);
     const articlePath = path.join(articleDir, 'page.mdx');
     fs.writeFileSync(articlePath, content);
     

@@ -1,11 +1,12 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import { ArticleWrapper } from '@/components/ArticleWrapper'
 
 export const article = {
-  author: 'Adam Wathan',
+  author: '水木易',
   date: '2022-09-02',
   title: 'Introducing Animaginary: High performance web animations',
-  description:
-    'When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.',
+  description: 'When you\'re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.',
+  slug: 'introducing-animaginary',
 }
 
 export const metadata = {
@@ -13,7 +14,11 @@ export const metadata = {
   description: article.description,
 }
 
-export default (props) => <ArticleLayout article={article} {...props} />
+export default (props) => (
+  <ArticleWrapper article={article}>
+    <ArticleLayout article={article} {...props} />
+  </ArticleWrapper>
+)
 
 When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.
 

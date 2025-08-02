@@ -1,10 +1,12 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import { ArticleWrapper } from '@/components/ArticleWrapper'
 
 export const article = {
   author: '水木易',
   date: '2025-07-30',
   title: 'lady first',
   description: 'lady first 简介',
+  slug: 'lady-first',
 }
 
 export const metadata = {
@@ -12,7 +14,11 @@ export const metadata = {
   description: article.description,
 }
 
-export default (props) => <ArticleLayout article={article} {...props} />
+export default (props) => (
+  <ArticleWrapper article={article}>
+    <ArticleLayout article={article} {...props} />
+  </ArticleWrapper>
+)
 
 我们经常收到易友的咨询，搞不清楚，"大限"、"流年"、"小限"这三个基本概念之间的区别和用法，今天我们就简明的介绍一下。
 

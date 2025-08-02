@@ -11,6 +11,7 @@ import {
   BilibiliIcon,
   WechatIcon,
 } from '@/components/SocialIcons'
+import { WebSiteStructuredData, PersonStructuredData } from '@/components/StructuredData'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
@@ -273,6 +274,8 @@ export default async function Home() {
 
   return (
     <>
+      <WebSiteStructuredData />
+      <PersonStructuredData />
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">

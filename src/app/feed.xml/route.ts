@@ -14,29 +14,31 @@ declare const require: {
 }
 
 export async function GET(req: Request) {
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shuimuyi.com'
 
   if (!siteUrl) {
     throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
   }
 
   let author = {
-    name: 'Spencer Sharp',
-    email: 'spencer@planetaria.tech',
+    name: '水木易',
+    email: 'contact@shuimuyi.com',
   }
 
   let feed = new Feed({
-    title: author.name,
-    description: 'Your blog description',
+    title: '水木易的个人博客',
+    description: '我是水木易，一名 Vibe Coder。作为终身学习者和中华国学探索者，我在产品管理和哲学思考之间寻找平衡，用代码构建有温度的数字世界。',
     author,
     id: siteUrl,
     link: siteUrl,
-    image: `${siteUrl}/favicon.ico`,
+    language: 'zh-CN',
+    image: `${siteUrl}/og-image.jpg`,
     favicon: `${siteUrl}/favicon.ico`,
-    copyright: `All rights reserved ${new Date().getFullYear()}`,
+    copyright: `版权所有 © ${new Date().getFullYear()} 水木易`,
     feedLinks: {
       rss2: `${siteUrl}/feed.xml`,
     },
+    generator: 'Next.js',
   })
 
   let articleIds = require
