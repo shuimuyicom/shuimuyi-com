@@ -279,7 +279,7 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Vibe Coder，用代码创造有温度的世界。
+            水木易的个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             我是水木易，一名充满热情的 Vibe Coder。作为终身学习者，我在产品管理、
@@ -319,8 +319,10 @@ export default async function Home() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
-            <Resume />
+            {/* 邮件订阅功能 - 暂时注释 */}
+            {/* <Newsletter /> */}
+            {/* 工作经历展示 - 暂时注释 */}
+            {/* <Resume /> */}
           </div>
         </div>
       </Container>
