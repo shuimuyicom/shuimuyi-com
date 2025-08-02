@@ -121,11 +121,13 @@ function MobileNavigation(
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+            <MobileNavItem href="/">Home</MobileNavItem>
             <MobileNavItem href="/about">关于我</MobileNavItem>
             <MobileNavItem href="/articles">文章</MobileNavItem>
             <MobileNavItem href="/projects">项目</MobileNavItem>
-            <MobileNavItem href="/speaking">演讲</MobileNavItem>
-            <MobileNavItem href="/uses">工具箱</MobileNavItem>
+            {/* 暂时隐藏以下导航项 - 2025-08-02 */}
+            {/* <MobileNavItem href="/speaking">演讲</MobileNavItem> */}
+            {/* <MobileNavItem href="/uses">工具箱</MobileNavItem> */}
           </ul>
         </nav>
       </PopoverPanel>
@@ -166,11 +168,13 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+        <NavItem href="/">首页</NavItem>
         <NavItem href="/about">关于我</NavItem>
         <NavItem href="/articles">文章</NavItem>
         <NavItem href="/projects">项目</NavItem>
-        <NavItem href="/speaking">演讲</NavItem>
-        <NavItem href="/uses">工具箱</NavItem>
+        {/* 暂时隐藏以下导航项 - 2025-08-02 */}
+        {/* <NavItem href="/speaking">演讲</NavItem> */}
+        {/* <NavItem href="/uses">工具箱</NavItem> */}
       </ul>
     </nav>
   )

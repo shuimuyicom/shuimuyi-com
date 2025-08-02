@@ -1,3 +1,12 @@
+/**
+ * 此页面暂时隐藏 - 2025-08-02
+ * 导航栏中的"工具箱"链接已被注释
+ * 如需重新启用：
+ * 1. 在 src/components/Header.tsx 和 Footer.tsx 中取消注释相关导航项
+ * 2. 注释或删除下方的 notFound() 调用
+ */
+
+import { notFound } from 'next/navigation'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -40,6 +49,10 @@ export const metadata = {
 }
 
 export default function Uses() {
+  // 临时隐藏此页面 - 基于最佳实践，避免使用中间件
+  notFound()
+  
+  // 以下为原页面内容（暂时不会执行）
   return (
     <SimpleLayout
       title="我的工具箱：软件、设备和其他好物推荐"

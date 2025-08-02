@@ -27,10 +27,12 @@ export function Footer() {
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                <NavLink href="/">首页</NavLink>
                 <NavLink href="/about">关于我</NavLink>
                 <NavLink href="/projects">项目</NavLink>
-                <NavLink href="/speaking">演讲</NavLink>
-                <NavLink href="/uses">工具箱</NavLink>
+                {/* 暂时隐藏以下导航项 - 2025-08-02 */}
+                {/* <NavLink href="/speaking">演讲</NavLink> */}
+                {/* <NavLink href="/uses">工具箱</NavLink> */}
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} 水木易. All rights
