@@ -45,8 +45,8 @@ export default async function ArticlesIndex() {
 
   return (
     <SimpleLayout
-      title="文章：设计开发、哲学以及其他"
-      intro="所有关于App设计开发、哲学思考以及其他长篇思考，按时间顺序整理。"
+      title="水木易的博客"
+      intro="所有关于产品设计、应用开发、哲学、生活的思考"
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">

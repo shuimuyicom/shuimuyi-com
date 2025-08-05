@@ -1,8 +1,6 @@
 import { type StaticImageData } from 'next/image'
 import logoZentomato from '@/images/logos/zentomato.jpg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
+import logoXuanji from '@/images/logos/xuanji.jpg'
 import logoShihenys from '@/images/logos/shihenys.jpg'
 
 export interface Project {
@@ -31,24 +29,11 @@ export const projects: Project[] = [
     logo: logoZentomato,
   },
   {
-    name: 'HelioStream',
+    name: '玄机AI（播客）',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      '这是一档由「水木易」主理，致力于在现代视角下重新诠释玄学术数的奥妙，深度探讨东西方智慧的泛哲学播客，欢迎订阅收听。',
+    link: { href: 'https://www.xiaoyuzhoufm.com/podcast/6837de815718419818dbcd97', label: '玄机AI.fm' },
+    logo: logoXuanji,
   },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
-  },
+  // 注意：已移除 cosmOS 和 OpenShuttle 示例项目
 ]
