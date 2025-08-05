@@ -1,0 +1,59 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { ArticleWrapper } from '@/components/ArticleWrapper'
+
+export const article = {
+  author: '水木易',
+  date: '2025-08-02',
+  title: '测试一下新的脚本以及导入组件功能',
+  description: '这是一个测试简介，我倒要看看',
+  slug: 'article-1',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => (
+  <ArticleWrapper article={article}>
+    <ArticleLayout article={article} {...props} />
+  </ArticleWrapper>
+)
+
+在这里开始写你的文章内容...
+
+## 第一个章节
+
+你可以从这里开始组织你的内容。
+
+### 小提示
+
+1. 使用 **粗体** 来强调重要内容
+2. 使用 *斜体* 来表示引用或特殊说明
+3. 使用列表来组织内容：
+   - 第一点
+   - 第二点
+   - 第三点
+
+### 添加代码
+
+如果你想分享代码，可以这样：
+
+```javascript
+// 你的代码
+console.log('Hello, World!');
+```
+
+### 添加图片
+
+1. 将图片放在文章目录中
+2. 在文件顶部导入：`import myImage from './image.png'`
+3. 在文章中使用：`<Image src={myImage} alt="描述" />`
+
+## 结语
+
+感谢阅读！
+
+---
+
+*这篇文章创建于 2025-08-02*
