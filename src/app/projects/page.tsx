@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="我所创造的一切，都是为了在宇宙中留下我的印记。"
-      intro="近年来我参与了许多小项目，以下是我引以为豪的成果。如果你发现感兴趣的项目或有改进建议，欢迎与我沟通交流。"
+      title="造物"
+      intro="我所有创造的一切，如果你发现感兴趣的项目或有改进建议，欢迎与我沟通交流"
     >
       <ul
         role="list"

@@ -37,7 +37,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
 export const metadata: Metadata = {
   title: '文章',
   description:
-    '所有关于编程、领导力、产品设计等长篇思考，按时间顺序整理。',
+    '所有关于产品设计、应用开发、哲学、生活、个人成长等长篇思考，按时间顺序整理。',
 }
 
 export default async function ArticlesIndex() {
@@ -45,7 +45,7 @@ export default async function ArticlesIndex() {
 
   return (
     <SimpleLayout
-      title="水木易的博客"
+      title="博客"
       intro="所有关于产品设计、应用开发、哲学、生活的思考"
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
