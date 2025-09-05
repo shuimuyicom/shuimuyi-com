@@ -306,8 +306,7 @@ export default async function Home() {
             水木易的个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            我是水木易，AI 时代的 Vibe Coder。我在产品管理、
-            哲学思考和中华国学之间不断探索，终身学习是我的人生底色，我相信技术与人文的结合能创造更美好的数字世界，
+            我是水木易，我在产品管理、哲学思考和中华国学之间不断探索，终身学习是我的人生底色，我相信技术与人文的结合能创造更美好的数字世界，
             致力于用代码构建有温度的 App。
           </p>
           <div className="mt-6 flex gap-6">
