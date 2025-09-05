@@ -84,6 +84,25 @@ function MobileNavItem({
   href: string
   children: React.ReactNode
 }) {
+  // 检测外部链接
+  const isExternalLink = href.startsWith('http')
+  
+  if (isExternalLink) {
+    return (
+      <li>
+        <PopoverButton
+          as="a"
+          href={href}
+          className="block py-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </PopoverButton>
+      </li>
+    )
+  }
+  
   return (
     <li>
       <PopoverButton as={Link} href={href} className="block py-2">
@@ -123,7 +142,7 @@ function MobileNavigation(
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
             <MobileNavItem href="/">首页</MobileNavItem>
             <MobileNavItem href="/projects">项目</MobileNavItem>
-            <MobileNavItem href="/articles">文章</MobileNavItem>
+            <MobileNavItem href="https://blog.shuimuyi.com">博客</MobileNavItem>
             <MobileNavItem href="/about">关于我</MobileNavItem>
             {/* 暂时隐藏以下导航项 - 2025-08-02 */}
             {/* <MobileNavItem href="/speaking">演讲</MobileNavItem> */}
@@ -143,6 +162,26 @@ function NavItem({
   children: React.ReactNode
 }) {
   let isActive = usePathname() === href
+  // 检测外部链接
+  const isExternalLink = href.startsWith('http')
+
+  if (isExternalLink) {
+    return (
+      <li>
+        <a
+          href={href}
+          className={clsx(
+            'relative block px-3 py-2 transition',
+            'hover:text-violet-600 dark:hover:text-violet-500',
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      </li>
+    )
+  }
 
   return (
     <li>
@@ -170,7 +209,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/">首页</NavItem>
         <NavItem href="/projects">项目</NavItem>
-        <NavItem href="/articles">文章</NavItem>
+        <NavItem href="https://blog.shuimuyi.com">博客</NavItem>
         <NavItem href="/about">关于我</NavItem>        
         {/* 暂时隐藏以下导航项 - 2025-08-02 */}
         {/* <NavItem href="/speaking">演讲</NavItem> */}
