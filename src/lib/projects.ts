@@ -25,7 +25,7 @@ export const projects: Project[] = [
     name: '禅番茄（macOS）',
     description:
       '一款专为 macOS 设计的番茄钟应用，将传统的番茄工作法与禅意美学完美融合，帮助您专注工作、平衡生活的禅意工具。',
-    link: { href: 'https://github.com/shuimuyi/zentomato', label: 'github.com' },
+    link: { href: 'https://apps.apple.com/cn/app/id6751840284', label: '禅番茄.app' },
     logo: logoZentomato,
   },
   {
