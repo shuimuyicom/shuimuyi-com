@@ -1,6 +1,5 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
@@ -23,15 +22,22 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
   children: React.ReactNode
 }) {
+  // 邮件链接不需要在新标签页打开
+  const isEmailLink = href.startsWith('mailto:')
+  
   return (
     <li className={clsx(className, 'flex')}>
-      <Link
+      <a
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-violet-600 dark:text-zinc-200 dark:hover:text-violet-600"
+        {...(!isEmailLink && { 
+          target: "_blank", 
+          rel: "noopener noreferrer" 
+        })}
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-violet-600" />
         <span className="ml-4">{children}</span>
-      </Link>
+      </a>
     </li>
   )
 }
@@ -91,7 +97,7 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://x.com/shuimuyicom" icon={XIcon}>
+            <SocialLink href="https://x.com/ohmuyi" icon={XIcon}>
               在 X 上关注
             </SocialLink>
             <SocialLink href="https://www.xiaohongshu.com/user/profile/67c43e27000000000601de46" icon={XiaohongshuIcon} className="mt-4">
