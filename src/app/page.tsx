@@ -20,8 +20,9 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
+// {{ AURA-X: 注释文章功能 - 首页不再显示文章列表. Approval: 寸止(ID:1738054400). }}
+// import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
+// import { formatDate } from '@/lib/formatDate'
 import { projects } from '@/lib/projects'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -94,6 +95,8 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+// {{ AURA-X: 注释文章功能 - Article组件已停用. Approval: 寸止(ID:1738054400). }}
+/*
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <Card as="article">
@@ -108,6 +111,7 @@ function Article({ article }: { article: ArticleWithSlug }) {
     </Card>
   )
 }
+*/
 
 function SocialLink({
   icon: Icon,
@@ -289,7 +293,8 @@ function Resume() {
 // }
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
+  // {{ AURA-X: 注释文章功能 - 首页不再获取文章数据. Approval: 寸止(ID:1738054400). }}
+  // let articles = (await getAllArticles()).slice(0, 4)
 
   return (
     <>
@@ -373,9 +378,10 @@ export default async function Home() {
         </div>
       </Container>
 
+      {/* {{ AURA-X: 注释文章功能 - 首页文章列表模块已停用. Approval: 寸止(ID:1738054400). }} */}
+      {/*
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto max-w-none">
-          {/* 文章列表标题和描述 */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
               最新文章
@@ -384,7 +390,6 @@ export default async function Home() {
               一些记录，欢迎与我交流探讨
             </p>
           </div>
-          {/* 双列文章列表 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
@@ -392,6 +397,7 @@ export default async function Home() {
           </div>
         </div>
       </Container>
+      */}
     </>
   )
 }

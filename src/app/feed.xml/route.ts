@@ -1,3 +1,5 @@
+// {{ AURA-X: 注释文章功能 - RSS订阅功能已停用，返回空feed. Approval: 寸止(ID:1738054400). }}
+/*
 import assert from 'assert'
 import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
@@ -72,6 +74,55 @@ export async function GET(req: Request) {
       date: new Date(date),
     })
   }
+
+  return new Response(feed.rss2(), {
+    status: 200,
+    headers: {
+      'content-type': 'application/xml',
+      'cache-control': 's-maxage=31556952',
+    },
+  })
+}
+*/
+
+import { Feed } from 'feed'
+
+// RSS订阅功能已停用 - 博客已迁移至 https://blog.shuimuyi.com
+export async function GET(req: Request) {
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shuimuyi.com'
+
+  let author = {
+    name: '水木易',
+    email: 'contact@shuimuyi.com',
+  }
+
+  let feed = new Feed({
+    title: '水木易的个人网站',
+    description: '博客功能已迁移至 https://blog.shuimuyi.com，欢迎访问新的博客地址。',
+    author,
+    id: siteUrl,
+    link: 'https://blog.shuimuyi.com',
+    language: 'zh-CN',
+    image: `${siteUrl}/og-image.jpg`,
+    favicon: `${siteUrl}/favicon.ico`,
+    copyright: `版权所有 © ${new Date().getFullYear()} 水木易`,
+    feedLinks: {
+      rss2: `${siteUrl}/feed.xml`,
+    },
+    generator: 'Next.js',
+  })
+
+  // 添加一个迁移通知条目
+  feed.addItem({
+    title: '博客已迁移',
+    id: 'https://blog.shuimuyi.com',
+    link: 'https://blog.shuimuyi.com',
+    description: '博客已迁移至新地址，请访问 https://blog.shuimuyi.com 获取最新内容。',
+    content: '博客已迁移至新地址，请访问 https://blog.shuimuyi.com 获取最新内容。',
+    author: [author],
+    contributor: [author],
+    date: new Date(),
+  })
 
   return new Response(feed.rss2(), {
     status: 200,
