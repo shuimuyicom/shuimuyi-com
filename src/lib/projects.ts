@@ -1,7 +1,7 @@
 import { type StaticImageData } from 'next/image'
-import logoZentomato from '@/images/logos/zentomato.jpg'
-import logoXuanji from '@/images/logos/xuanji.jpg'
-import logoShihenys from '@/images/logos/shihenys.jpg'
+import logoZentomato from '@/images/logos/zentomato.png'
+import logoXuanji from '@/images/logos/xuanji.png'
+import logoShihenys from '@/images/logos/shihenys.png'
 
 export interface Project {
   name: string

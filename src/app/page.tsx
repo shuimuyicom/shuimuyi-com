@@ -13,7 +13,7 @@ import {
 import { WebSiteStructuredData, PersonStructuredData } from '@/components/StructuredData'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
-import logoShihenys from '@/images/logos/shihenys.jpg'
+import logoShihenys from '@/images/logos/shihenys.png'
 import logoStarbucks from '@/images/logos/starbucks.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
