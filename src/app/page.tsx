@@ -311,7 +311,7 @@ export default async function Home() {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://x.com/shuimuyicom"
+              href="https://x.com/ohmuyi"
               aria-label="Follow on X"
               icon={XIcon}
             />
