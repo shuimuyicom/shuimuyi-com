@@ -16,7 +16,7 @@ function NavLink({
     return (
       <a
         href={href}
-        className="transition hover:text-violet-600 dark:hover:text-violet-500"
+        className="transition hover:text-sky-600 dark:hover:text-sky-500"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -28,7 +28,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="transition hover:text-violet-600 dark:hover:text-violet-500"
+      className="transition hover:text-sky-600 dark:hover:text-sky-500"
     >
       {children}
     </Link>

@@ -31,10 +31,10 @@ export default {
         css: {
           '--tw-prose-body': theme('colors.zinc.600'),
           '--tw-prose-headings': theme('colors.zinc.900'),
-          '--tw-prose-links': '#7c3aed', // violet-600
-          '--tw-prose-links-hover': '#6d28d9', // violet-700
-          '--tw-prose-underline': 'rgb(124 58 237 / 0.2)', // violet-600 / 0.2
-          '--tw-prose-underline-hover': '#7c3aed', // violet-600
+          '--tw-prose-links': '#0284c7', // sky-600 {{ AURA-X: Modify - violet→sky 主色. Confirmed via 寸止 }}
+          '--tw-prose-links-hover': '#0369a1', // sky-700 {{ AURA-X: Modify - 悬停色更新 }}
+          '--tw-prose-underline': 'rgb(2 132 199 / 0.2)', // sky-600 / 0.2 {{ AURA-X: Modify - 透明度保持 }}
+          '--tw-prose-underline-hover': '#0284c7', // sky-600
           '--tw-prose-bold': theme('colors.zinc.900'),
           '--tw-prose-counters': theme('colors.zinc.900'),
           '--tw-prose-bullets': theme('colors.zinc.900'),
@@ -51,10 +51,10 @@ export default {
 
           '--tw-prose-invert-body': theme('colors.zinc.400'),
           '--tw-prose-invert-headings': theme('colors.zinc.200'),
-          '--tw-prose-invert-links': '#8b5cf6', // violet-500
-          '--tw-prose-invert-links-hover': '#8b5cf6', // violet-500
-          '--tw-prose-invert-underline': 'rgb(139 92 246 / 0.3)', // violet-500 / 0.3
-          '--tw-prose-invert-underline-hover': '#8b5cf6', // violet-500
+          '--tw-prose-invert-links': '#0ea5e9', // sky-500 {{ AURA-X: Modify - 暗色模式主色更新 }}
+          '--tw-prose-invert-links-hover': '#0ea5e9', // sky-500
+          '--tw-prose-invert-underline': 'rgb(14 165 233 / 0.3)', // sky-500 / 0.3
+          '--tw-prose-invert-underline-hover': '#0ea5e9', // sky-500
           '--tw-prose-invert-bold': theme('colors.zinc.200'),
           '--tw-prose-invert-counters': theme('colors.zinc.200'),
           '--tw-prose-invert-bullets': theme('colors.zinc.200'),

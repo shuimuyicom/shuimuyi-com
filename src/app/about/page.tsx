@@ -29,13 +29,13 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <a
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-violet-600 dark:text-zinc-200 dark:hover:text-violet-600"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-sky-600 dark:text-zinc-200 dark:hover:text-sky-600"
         {...(!isEmailLink && { 
           target: "_blank", 
           rel: "noopener noreferrer" 
         })}
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-violet-600" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-600" />
         <span className="ml-4">{children}</span>
       </a>
     </li>

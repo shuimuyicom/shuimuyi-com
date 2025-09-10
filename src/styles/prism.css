@@ -27,7 +27,7 @@ pre[class*='language-'] {
 .token.class,
 .token.string,
 .token.property {
-  color: #a78bfa; /* violet-400 */
+  color: #38bdf8; /* sky-400 {{ AURA-X: Modify - 按确认迁移自 violet-400 }} */
 }
 
 .token.punctuation,
