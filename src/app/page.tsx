@@ -154,7 +154,7 @@ function Newsletter() {
             placeholder="Email address"
             aria-label="Email address"
             required
-            className="w-full appearance-none rounded-[calc(var(--radius-md)-1px)] bg-white px-3 py-[calc(--spacing(2)-1px)] shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-sky-600/10 focus:outline-sky-600 sm:text-sm dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-sky-500/10 dark:focus:outline-sky-500"
+            className="w-full appearance-none rounded-[calc(var(--radius-md)-1px)] bg-white px-3 py-[calc(--spacing(2)-1px)] shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-sky-800/10 focus:outline-sky-800 sm:text-sm dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-sky-700/10 dark:focus:outline-sky-700"
           />
         </span>
         <Button type="submit" className="ml-4 flex-none">
@@ -363,7 +363,7 @@ export default async function Home() {
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-sky-600 dark:text-zinc-200">
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-sky-800 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2">{project.link.label}</span>
               </p>

@@ -172,7 +172,7 @@ function NavItem({
           href={href}
           className={clsx(
             'relative block px-3 py-2 transition',
-            'hover:text-sky-600 dark:hover:text-sky-500',
+            'hover:text-sky-800 dark:hover:text-sky-700',
           )}
           target="_blank"
           rel="noopener noreferrer"
@@ -190,13 +190,13 @@ function NavItem({
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-sky-600 dark:text-sky-500'
-            : 'hover:text-sky-600 dark:hover:text-sky-500',
+            ? 'text-sky-800 dark:text-sky-700'
+            : 'hover:text-sky-800 dark:hover:text-sky-700',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-sky-600/0 via-sky-600/40 to-sky-600/0 dark:from-sky-500/0 dark:via-sky-500/40 dark:to-sky-500/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-sky-800/0 via-sky-800/40 to-sky-800/0 dark:from-sky-700/0 dark:via-sky-700/40 dark:to-sky-700/0" />
         )}
       </Link>
     </li>
@@ -235,8 +235,8 @@ function ThemeToggle() {
       className="group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-sky-50 [@media(prefers-color-scheme:dark)]:stroke-sky-600 [@media(prefers-color-scheme:dark)]:group-hover:fill-sky-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-sky-700" />
-      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition not-[@media_(prefers-color-scheme:dark)]:fill-sky-500/10 not-[@media_(prefers-color-scheme:dark)]:stroke-sky-600 dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400" />
+      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-sky-50 [@media(prefers-color-scheme:dark)]:stroke-sky-800 [@media(prefers-color-scheme:dark)]:group-hover:fill-sky-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-sky-900" />
+      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition not-[@media_(prefers-color-scheme:dark)]:fill-sky-700/10 not-[@media_(prefers-color-scheme:dark)]:stroke-sky-800 dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400" />
     </button>
   )
 }
