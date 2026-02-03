@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 import {
   XIcon,
   XiaohongshuIcon,
-  BilibiliIcon,
+  TelegramIcon,
   WechatIcon,
 } from '@/components/SocialIcons'
 import { WebSiteStructuredData, PersonStructuredData } from '@/components/StructuredData'
@@ -125,7 +125,7 @@ function SocialLink({
       {...externalProps}
       {...props}
     >
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300" />
     </a>
   )
 }
@@ -302,7 +302,9 @@ export default async function Home() {
             水木易的个人网站
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            我是水木易，理科生，计算机科班出身，厌倦编程转读哲学硕士。受马克思“解释世界不如改变世界”启发，进入互联网做产品经理。大厂卷过，小厂混过，合伙创业折腾过。20年开始迷上国学命理，目前正在转型中，拥抱中年失业男人三件套：跨境电商/自媒体/独立产品。探索国学命理领域相关机会，并寻求AI与传统文化的结合与产品化落地。
+            读过哲学，写过代码，做过产品，一直在路上的连续创业者。
+            我关心技术怎么落地，也关心它带来的意义。
+            这里主要展示我的作品与项目，也希望链接同频的人，把想法做成产品。
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -316,9 +318,9 @@ export default async function Home() {
               icon={XiaohongshuIcon}
             />
             <SocialLink
-              href="https://space.bilibili.com/3546693144414341"
-              aria-label="关注B站"
-              icon={BilibiliIcon}
+              href="https://t.me/shuimuyi"
+              aria-label="关注Telegram"
+              icon={TelegramIcon}
             />
             <SocialLink
               href="https://mp.weixin.qq.com/s/KiXFC1ajCoU0jy-ThpV7ng"

@@ -5,7 +5,7 @@ import { Container } from '@/components/Container'
 import {
   XIcon,
   XiaohongshuIcon,
-  BilibiliIcon,
+  TelegramIcon,
   WechatIcon,
 } from '@/components/SocialIcons'
 import { getExternalLinkProps } from '@/lib/links'
@@ -33,7 +33,7 @@ function SocialLink({
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-sky-800 dark:text-zinc-200 dark:hover:text-sky-800"
         {...externalProps}
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-800" />
+        <Icon className="h-6 w-6 flex-none text-zinc-500 transition group-hover:text-sky-800 dark:text-zinc-400 dark:group-hover:text-sky-700" />
         <span className="ml-4">{children}</span>
       </a>
     </li>
@@ -54,7 +54,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 export const metadata: Metadata = generatePageMetadata({
   title: '关于我',
   description:
-    '我是水木易，试图在代码与哲学之间寻找平衡，用技术创造有温度的世界。',
+    '我是水木易，连续创业者、产品经理、程序员与哲学思考者，关注科技与人文的交汇。',
   path: '/about',
 })
 
@@ -74,23 +74,20 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
-            产品经理 · 哲学硕士 · 国学命理探索者
+            连续创业 · 产品经理 · 程序员 · 哲学僧
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-            关于我：理科生，计算机科班出身，厌倦编程转读哲学硕士。受马克思「解释世界不如改变世界」启发，进入互联网做产品经理。大厂卷过，小厂混过，合伙创业折腾过。
+              关于我：理科生，计算机科班出身，后来读了哲学硕士。从工程到产品，再到创业，我一直在用技术解决真实问题，也在反复追问“我们为什么要这样做”。
             </p>
             <p>
-              正在探索：20年开始迷上国学命理，目前正在转型中，拥抱中年失业男人三件套：跨境电商/自媒体/独立产品。探索国学命理领域相关机会，并寻求AI与传统文化的结合与产品化落地。
+              我试图以科技精神，重构人文价值：用理性与实践检验想法，用产品与代码把思想落地，让技术更有温度、更有方向。
             </p>
             <p>
-            我深信中华国学中蕴含着丰富的智慧宝藏，尤其在易学命理学与中医养生体系中，包含了对人与自然、身与心和谐共生的深刻洞察。我期望能够将源远流长的传统文化与前沿AI技术完美融合，打造出更多实用工具，帮助更多人把握自身命运，开创更健康、更和谐的人生。
+              我会聊科技互联网、产品方法、编程实践，也会聊哲学与人文历史。希望在快速变化的时代里，保留对意义的敏感与对事实的尊重。
             </p>
             <p>
-            在这里，我将与大家分享我的学习心得、深度思考和人生感悟，同时展示我正在开发的创新项目。我会持续更新内容，为大家带来新的见解和发现。
-            </p>
-            <p>
-            如果你对我在AI与中华国学交融领域的探索感兴趣，特别是在易学命理或中医养生方面有所思考，诚挚欢迎与我交流切磋。期待能与你一同探讨如何让AI技术为中国传统文化注入新的活力，共同传承和创新这份宝贵的文化遗产。
+              如果你也关注技术与哲学的交汇，或在寻找更有价值导向的产品与创业方向，欢迎交流。
             </p>
           </div>
         </div>
@@ -102,8 +99,8 @@ export default function About() {
             <SocialLink href="https://www.xiaohongshu.com/user/profile/67c43e27000000000601de46" icon={XiaohongshuIcon} className="mt-4">
               小红书主页
             </SocialLink>
-            <SocialLink href="https://space.bilibili.com/3546693144414341" icon={BilibiliIcon} className="mt-4">
-              B站空间
+            <SocialLink href="https://t.me/shuimuyi" icon={TelegramIcon} className="mt-4">
+              Telegram
             </SocialLink>
             <SocialLink href="https://mp.weixin.qq.com/s/KiXFC1ajCoU0jy-ThpV7ng" icon={WechatIcon} className="mt-4">
               微信公众号
