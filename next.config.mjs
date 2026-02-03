@@ -9,7 +9,7 @@ const nextConfig = {
     '/articles/*': ['./src/app/articles/**/*.mdx'],
   },
 
-  // 图片优化配置
+  // 图片优化
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400, // 24小时
@@ -17,16 +17,16 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // 压缩优化
+  // 压缩
   compress: true,
 
-  // 实验性功能（根据需要使用）
+  // 实验性功能（按需启用）
   experimental: {
     // typedRoutes: true, // 需要时使用
     // ppr: true, // Partial Prerendering，需要时使用
   },
 
-  // HTTP Headers 安全配置
+  // 安全头
   async headers() {
     return [
       {
@@ -51,7 +51,7 @@ const nextConfig = {
         ],
       },
       {
-        // 静态资源长期缓存
+        // 静态资源长缓存
         source: '/(.*\\.(?:jpg|jpeg|gif|png|svg|webp|ico|woff|woff2|ttf|otf))',
         headers: [
           {
@@ -67,10 +67,8 @@ const nextConfig = {
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    // 暂时注释掉 remarkPlugins
-    // Next.js 16 + @next/mdx 15+ 中，remarkPlugins 包含的函数无法被序列化
-    // 会导致 "does not have serializable options" 错误
-    // 如需使用 remarkGfm，建议在 mdx-components.tsx 中处理
+    // remarkPlugins 暂停：Next.js 16 + @next/mdx 15+ 序列化受限
+    // 如需 GFM，建议在 mdx-components.tsx 中处理
   },
 })
 

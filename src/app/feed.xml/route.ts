@@ -1,10 +1,9 @@
-// {{ AURA-X: 注释文章功能 - RSS订阅功能已停用，返回空feed. Approval: 寸止(ID:1738054400). }}
-/*
+/* 旧版 RSS 生成器（博客迁移后停用）
 import assert from 'assert'
 import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
 
-// 声明 webpack require.context 类型
+// require.context 类型声明
 declare const require: {
   context: (
     directory: string,
@@ -88,7 +87,7 @@ export async function GET(_req: Request) {
 import { Feed } from 'feed'
 import { siteConfig } from '@/lib/seo'
 
-// RSS订阅功能已停用 - 博客已迁移至 https://blog.shuimuyi.com
+// RSS 仅保留迁移提示（博客已迁移至 https://blog.shuimuyi.com）
 export async function GET(req: Request) {
   let siteUrl = siteConfig.url
 
@@ -113,7 +112,7 @@ export async function GET(req: Request) {
     generator: 'Next.js',
   })
 
-  // 添加一个迁移通知条目
+  // 迁移提示条目
   feed.addItem({
     title: '博客已迁移',
     id: 'https://blog.shuimuyi.com',

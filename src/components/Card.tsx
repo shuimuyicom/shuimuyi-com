@@ -33,7 +33,6 @@ export function Card<T extends React.ElementType = 'div'>({
       className={clsx(
         className,
         'group relative flex flex-col items-start',
-        // 添加优雅的阴影效果
         'rounded-2xl p-6',
         'shadow-sm hover:shadow-md',
         'transition-shadow duration-300 ease-in-out',

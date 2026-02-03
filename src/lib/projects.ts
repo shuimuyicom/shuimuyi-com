@@ -35,5 +35,5 @@ export const projects: Project[] = [
     link: { href: 'https://www.xiaoyuzhoufm.com/podcast/6837de815718419818dbcd97', label: '玄机AI.fm' },
     logo: logoXuanji,
   },
-  // 注意：已移除 cosmOS 和 OpenShuttle 示例项目
+  // 示例项目已移除：cosmOS、OpenShuttle
 ]

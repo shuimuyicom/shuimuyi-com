@@ -144,7 +144,7 @@ function MobileNavigation(
             <MobileNavItem href="/projects">项目</MobileNavItem>
             <MobileNavItem href="https://blog.shuimuyi.com">博客</MobileNavItem>
             <MobileNavItem href="/about">关于我</MobileNavItem>
-            {/* 暂时隐藏以下导航项 - 2025-08-02 */}
+            {/* 暂时隐藏：演讲、工具箱（2025-08-02） */}
             {/* <MobileNavItem href="/speaking">演讲</MobileNavItem> */}
             {/* <MobileNavItem href="/uses">工具箱</MobileNavItem> */}
           </ul>
@@ -210,8 +210,8 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/">首页</NavItem>
         <NavItem href="/projects">项目</NavItem>
         <NavItem href="https://blog.shuimuyi.com">博客</NavItem>
-        <NavItem href="/about">关于我</NavItem>        
-        {/* 暂时隐藏以下导航项 - 2025-08-02 */}
+        <NavItem href="/about">关于我</NavItem>
+        {/* 暂时隐藏：演讲、工具箱（2025-08-02） */}
         {/* <NavItem href="/speaking">演讲</NavItem> */}
         {/* <NavItem href="/uses">工具箱</NavItem> */}
       </ul>

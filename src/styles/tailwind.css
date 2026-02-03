@@ -1,19 +1,19 @@
-/* 声明所有使用的 layers */
+/* Tailwind layers */
 @layer theme, base, components, utilities;
 
-/* 导入 Tailwind CSS */
+/* Tailwind core */
 @import "tailwindcss";
 
-/* 导入 prism.css 到 components layer */
+/* Prism styles */
 @import "./prism.css" layer(components);
 
-/* 加载插件 */
+/* Plugins */
 @plugin "@tailwindcss/typography";
 
-/* 加载配置文件 */
+/* Config */
 @config "../../typography.ts";
 
-/* 定义自定义变体 */
+/* Variants */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

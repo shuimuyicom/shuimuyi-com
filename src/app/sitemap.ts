@@ -1,13 +1,12 @@
 import { MetadataRoute } from 'next'
 import { siteConfig } from '@/lib/seo'
-// {{ AURA-X: 注释文章功能 - sitemap不再包含文章路径. Approval: 寸止(ID:1738054400). }}
+// 文章列表已停用，暂不引入文章数据
 // import { getAllArticles } from '@/lib/articles'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url
   const now = new Date()
   
-  // {{ AURA-X: 注释文章功能 - 不再获取文章数据. Approval: 寸止(ID:1738054400). }}
   // const articles = await getAllArticles()
   
   // 静态页面
@@ -24,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
-    // {{ AURA-X: 注释文章功能 - 移除文章列表页sitemap. Approval: 寸止(ID:1738054400). }}
+    // 文章列表页已停用
     /*
     {
       url: `${baseUrl}/articles`,
@@ -39,10 +38,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
-    // /speaking 和 /uses 当前返回 404，不应出现在 sitemap 中
+    // /speaking 与 /uses 目前 404，不进 sitemap
   ]
   
-  // {{ AURA-X: 注释文章功能 - 移除所有文章页面sitemap. Approval: 寸止(ID:1738054400). }}
+  // 文章详情页已停用
   /*
   const articlePages = articles.map((article) => ({
     url: `${baseUrl}/articles/${article.slug}`,

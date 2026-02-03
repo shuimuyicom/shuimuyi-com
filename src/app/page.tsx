@@ -14,7 +14,7 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoShihenys from '@/images/logos/shihenys.png'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-// {{ AURA-X: 注释文章功能 - 首页不再显示文章列表. Approval: 寸止(ID:1738054400). }}
+// 文章列表已停用，保留导入以便恢复
 // import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 // import { formatDate } from '@/lib/formatDate'
 import { getExternalLinkProps } from '@/lib/links'
@@ -90,7 +90,7 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-// {{ AURA-X: 注释文章功能 - Article组件已停用. Approval: 寸止(ID:1738054400). }}
+// 文章卡片组件（已停用）
 /*
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
@@ -119,9 +119,9 @@ function SocialLink({
   const externalProps = getExternalLinkProps(href)
 
   return (
-    <a 
+    <a
       href={href}
-      className="group -m-1 p-1" 
+      className="group -m-1 p-1"
       {...externalProps}
       {...props}
     >
@@ -260,7 +260,7 @@ function Resume() {
   )
 }
 
-// 照片墙组件已被隐藏
+// 照片墙（暂时隐藏）
 // function Photos() {
 //   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
@@ -289,7 +289,7 @@ function Resume() {
 // }
 
 export default async function Home() {
-  // {{ AURA-X: 注释文章功能 - 首页不再获取文章数据. Approval: 寸止(ID:1738054400). }}
+  // 文章列表已停用，暂不拉取文章数据
   // let articles = (await getAllArticles()).slice(0, 4)
 
   return (
@@ -328,9 +328,9 @@ export default async function Home() {
           </div>
         </div>
       </Container>
+      {/* 照片墙暂时隐藏 */}
       {/* <Photos /> */}
-      
-      {/* 项目展示部分 */}
+
       <Container className="mt-16 sm:mt-20">
         <div className="max-w-2xl">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
@@ -372,7 +372,7 @@ export default async function Home() {
         </div>
       </Container>
 
-      {/* {{ AURA-X: 注释文章功能 - 首页文章列表模块已停用. Approval: 寸止(ID:1738054400). }} */}
+      {/* 文章列表模块已停用 */}
       {/*
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto max-w-none">

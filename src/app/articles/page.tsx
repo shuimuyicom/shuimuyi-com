@@ -1,4 +1,4 @@
-// {{ AURA-X: 注释文章功能 - 停用文章列表页面，访问时返回404. Approval: 寸止(ID:1738054400). }}
+// 文章列表页面已停用（保留旧实现）
 /*
 import { type Metadata } from 'next'
 
@@ -62,7 +62,7 @@ export default async function ArticlesIndex() {
 }
 */
 
-// 文章功能已停用 - 如需访问文章请前往 https://blog.shuimuyi.com
+// 文章列表已停用，访问请前往 https://blog.shuimuyi.com
 import { notFound } from 'next/navigation'
 
 export default function ArticlesIndex() {

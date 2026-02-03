@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 
-/**
- * 站点核心配置
- * 集中管理所有 SEO 和站点元数据
- */
+/** 站点 SEO 与元数据配置 */
 export const siteConfig = {
   // 基础信息
   name: '水木易',
@@ -12,10 +9,10 @@ export const siteConfig = {
   description:
     '我是水木易，作为终身学习者和中华国学探索者，试图在产品管理和哲学思考之间寻找平衡，用代码构建有温度的应用。',
 
-  // 站点 URL
+  // 站点地址
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://shuimuyi.com',
 
-  // OG 图片
+  // OG 图
   ogImage: {
     url: '/og-image.jpg',
     width: 1200,
@@ -37,23 +34,19 @@ export const siteConfig = {
     twitter: '@ohmuyi',
   },
 
-  // 多语言支持
+  // 多语言
   locale: 'zh-CN',
   alternateLocales: ['en-US'],
 } as const
 
-// 类型导出
 export type SiteConfig = typeof siteConfig
 
-/**
- * 生成基础 Metadata 配置
- * 用于 layout.tsx
- */
+/** 基础 Metadata（layout.tsx 使用） */
 export function generateBaseMetadata(
   override?: Partial<Metadata>
 ): Metadata {
   return {
-    // 基础元数据
+    // 基础
     metadataBase: new URL(siteConfig.url),
     title: {
       template: '%s - 水木易',
@@ -75,7 +68,7 @@ export function generateBaseMetadata(
       '中医养生',
     ],
 
-    // 作者信息
+    // 作者
     authors: [{ name: siteConfig.author.name }],
     creator: siteConfig.author.name,
     publisher: siteConfig.author.name,
@@ -99,7 +92,7 @@ export function generateBaseMetadata(
       ],
     },
 
-    // Twitter Card
+    // Twitter
     twitter: {
       card: 'summary_large_image',
       title: siteConfig.title,
@@ -122,7 +115,7 @@ export function generateBaseMetadata(
       },
     },
 
-    // 备用链接
+    // 替代链接
     alternates: {
       canonical: siteConfig.url,
       types: {
@@ -130,7 +123,7 @@ export function generateBaseMetadata(
       },
     },
 
-    // 其他元数据
+    // 其他
     category: 'technology',
     classification: 'Personal Website',
     referrer: 'strict-origin-when-cross-origin',
@@ -140,10 +133,7 @@ export function generateBaseMetadata(
   }
 }
 
-/**
- * Viewport 配置
- * 从 Metadata 中分离出来，避免重复渲染警告
- */
+/** Viewport 配置（避免重复渲染警告） */
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
@@ -156,9 +146,7 @@ export const viewport: Viewport = {
   colorScheme: 'dark light',
 }
 
-/**
- * 为特定页面生成 Metadata
- */
+/** 页面级 Metadata */
 export function generatePageMetadata({
   title,
   description,

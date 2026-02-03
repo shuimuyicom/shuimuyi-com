@@ -47,7 +47,7 @@ export function Footer() {
                 <NavLink href="/projects">项目</NavLink>
                 <NavLink href="https://blog.shuimuyi.com">博客</NavLink>
                 <NavLink href="/about">关于我</NavLink>
-                {/* 暂时隐藏以下导航项 - 2025-08-02 */}
+                {/* 暂时隐藏：演讲、工具箱（2025-08-02） */}
                 {/* <NavLink href="/speaking">演讲</NavLink> */}
                 {/* <NavLink href="/uses">工具箱</NavLink> */}
               </div>
