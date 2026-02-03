@@ -14,6 +14,7 @@ import {
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import { getExternalLinkProps, isInternalHref } from '@/lib/links'
 import avatarImage from '@/images/avatar.jpg'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -84,18 +85,17 @@ function MobileNavItem({
   href: string
   children: React.ReactNode
 }) {
-  // 检测外部链接
-  const isExternalLink = href.startsWith('http')
-  
-  if (isExternalLink) {
+  const isInternal = isInternalHref(href)
+  const externalProps = getExternalLinkProps(href)
+
+  if (!isInternal) {
     return (
       <li>
         <PopoverButton
           as="a"
           href={href}
           className="block py-2"
-          target="_blank"
-          rel="noopener noreferrer"
+          {...externalProps}
         >
           {children}
         </PopoverButton>
@@ -162,10 +162,10 @@ function NavItem({
   children: React.ReactNode
 }) {
   let isActive = usePathname() === href
-  // 检测外部链接
-  const isExternalLink = href.startsWith('http')
+  const isInternal = isInternalHref(href)
+  const externalProps = getExternalLinkProps(href)
 
-  if (isExternalLink) {
+  if (!isInternal) {
     return (
       <li>
         <a
@@ -174,8 +174,7 @@ function NavItem({
             'relative block px-3 py-2 transition',
             'hover:text-sky-800 dark:hover:text-sky-700',
           )}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...externalProps}
         >
           {children}
         </a>
@@ -193,6 +192,7 @@ function NavItem({
             ? 'text-sky-800 dark:text-sky-700'
             : 'hover:text-sky-800 dark:hover:text-sky-700',
         )}
+        aria-current={isActive ? 'page' : undefined}
       >
         {children}
         {isActive && (

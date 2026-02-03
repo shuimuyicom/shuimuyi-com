@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
+import { getExternalLinkProps, isInternalHref } from '@/lib/links'
 
 function NavLink({
   href,
@@ -9,16 +10,15 @@ function NavLink({
   href: string
   children: React.ReactNode
 }) {
-  // 检测外部链接
-  const isExternalLink = href.startsWith('http')
-  
-  if (isExternalLink) {
+  const isInternal = isInternalHref(href)
+  const externalProps = getExternalLinkProps(href)
+
+  if (!isInternal) {
     return (
       <a
         href={href}
         className="transition hover:text-sky-800 dark:hover:text-sky-700"
-        target="_blank"
-        rel="noopener noreferrer"
+        {...externalProps}
       >
         {children}
       </a>

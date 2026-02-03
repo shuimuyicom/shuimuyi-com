@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { getExternalLinkProps, isInternalHref } from '@/lib/links'
+
 function ChevronRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
@@ -18,6 +20,7 @@ export function Card<T extends React.ElementType = 'div'>({
   as,
   className,
   children,
+  ...props
 }: Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'className'> & {
   as?: T
   className?: string
@@ -26,6 +29,7 @@ export function Card<T extends React.ElementType = 'div'>({
 
   return (
     <Component
+      {...props}
       className={clsx(
         className,
         'group relative flex flex-col items-start',
@@ -50,27 +54,22 @@ Card.Link = function CardLink({
   href: string
   children: React.ReactNode
 } & Omit<React.ComponentPropsWithoutRef<typeof Link>, 'href'>) {
-  // 检测外部链接
-  const isExternalLink = href.startsWith('http')
+  const isInternal = isInternalHref(href)
+  const externalProps = getExternalLinkProps(href)
   
   return (
     <>
       <div className="absolute inset-0 z-0 scale-95 bg-zinc-50/50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 rounded-2xl dark:bg-zinc-800/30" />
-      {isExternalLink ? (
-        <a 
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          {...props}
-        >
-          <span className="absolute inset-0 z-20 rounded-2xl" />
-          <span className="relative z-10">{children}</span>
-        </a>
-      ) : (
+      {isInternal ? (
         <Link href={href} {...props}>
           <span className="absolute inset-0 z-20 rounded-2xl" />
           <span className="relative z-10">{children}</span>
         </Link>
+      ) : (
+        <a href={href} {...externalProps} {...props}>
+          <span className="absolute inset-0 z-20 rounded-2xl" />
+          <span className="relative z-10">{children}</span>
+        </a>
       )}
     </>
   )

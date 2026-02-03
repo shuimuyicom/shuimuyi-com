@@ -15,7 +15,7 @@ declare const require: {
   }
 }
 
-export async function GET(req: Request) {
+export async function GET(_req: Request) {
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shuimuyi.com'
 
   if (!siteUrl) {
@@ -86,10 +86,11 @@ export async function GET(req: Request) {
 */
 
 import { Feed } from 'feed'
+import { siteConfig } from '@/lib/seo'
 
 // RSS订阅功能已停用 - 博客已迁移至 https://blog.shuimuyi.com
 export async function GET(req: Request) {
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shuimuyi.com'
+  let siteUrl = siteConfig.url
 
   let author = {
     name: '水木易',

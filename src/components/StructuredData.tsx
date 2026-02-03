@@ -29,7 +29,7 @@ export function ArticleStructuredData({
     },
     datePublished: date,
     dateModified: date,
-    image: image || `${siteConfig.url}${siteConfig.ogImage}`,
+    image: image || `${siteConfig.url}${siteConfig.ogImage.url}`,
     url: `${siteConfig.url}/articles/${slug}`,
     publisher: {
       '@type': 'Person',
@@ -90,7 +90,7 @@ export function PersonStructuredData() {
     name: siteConfig.author.name,
     email: siteConfig.author.email,
     url: siteConfig.url,
-    image: `${siteConfig.url}/avatar.jpg`,
+    image: `${siteConfig.url}${siteConfig.ogImage.url}`,
     jobTitle: 'Vibe Coder',
     description: siteConfig.description,
     sameAs: [

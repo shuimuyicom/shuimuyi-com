@@ -1,5 +1,4 @@
 import Image, { type ImageProps } from 'next/image'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -15,14 +14,10 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoShihenys from '@/images/logos/shihenys.png'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
 // {{ AURA-X: 注释文章功能 - 首页不再显示文章列表. Approval: 寸止(ID:1738054400). }}
 // import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 // import { formatDate } from '@/lib/formatDate'
+import { getExternalLinkProps } from '@/lib/links'
 import { projects } from '@/lib/projects'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -121,12 +116,13 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
   href: string
 } & Omit<React.ComponentPropsWithoutRef<'a'>, 'href'>) {
+  const externalProps = getExternalLinkProps(href)
+
   return (
     <a 
       href={href}
       className="group -m-1 p-1" 
-      target="_blank"
-      rel="noopener noreferrer"
+      {...externalProps}
       {...props}
     >
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />

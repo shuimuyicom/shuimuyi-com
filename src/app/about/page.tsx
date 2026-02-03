@@ -8,6 +8,7 @@ import {
   BilibiliIcon,
   WechatIcon,
 } from '@/components/SocialIcons'
+import { getExternalLinkProps } from '@/lib/links'
 import { generatePageMetadata } from '@/lib/seo'
 import portraitImage from '@/images/portrait.jpg'
 import type { Metadata } from 'next'
@@ -23,18 +24,14 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
   children: React.ReactNode
 }) {
-  // 邮件链接不需要在新标签页打开
-  const isEmailLink = href.startsWith('mailto:')
+  const externalProps = getExternalLinkProps(href)
 
   return (
     <li className={clsx(className, 'flex')}>
       <a
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-sky-800 dark:text-zinc-200 dark:hover:text-sky-800"
-        {...(!isEmailLink && {
-          target: "_blank",
-          rel: "noopener noreferrer"
-        })}
+        {...externalProps}
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-800" />
         <span className="ml-4">{children}</span>
