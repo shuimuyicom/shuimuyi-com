@@ -67,23 +67,10 @@ const nextConfig = {
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      [rehypePrettyCode, {
-        // 使用 GitHub 主题，支持亮色和暗色模式
-        theme: {
-          dark: 'github-dark-dimmed',
-          light: 'github-light'
-        },
-        // 保持背景色
-        keepBackground: false,
-        // 默认语言设置
-        defaultLang: {
-          block: 'plaintext',
-          inline: 'plaintext'
-        }
-      }]
-    ],
+    // 暂时注释掉 remarkPlugins
+    // Next.js 16 + @next/mdx 15+ 中，remarkPlugins 包含的函数无法被序列化
+    // 会导致 "does not have serializable options" 错误
+    // 如需使用 remarkGfm，建议在 mdx-components.tsx 中处理
   },
 })
 
