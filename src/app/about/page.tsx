@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -9,7 +8,9 @@ import {
   BilibiliIcon,
   WechatIcon,
 } from '@/components/SocialIcons'
+import { generatePageMetadata } from '@/lib/seo'
 import portraitImage from '@/images/portrait.jpg'
+import type { Metadata } from 'next'
 
 function SocialLink({
   className,
@@ -24,15 +25,15 @@ function SocialLink({
 }) {
   // 邮件链接不需要在新标签页打开
   const isEmailLink = href.startsWith('mailto:')
-  
+
   return (
     <li className={clsx(className, 'flex')}>
       <a
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-sky-800 dark:text-zinc-200 dark:hover:text-sky-800"
-        {...(!isEmailLink && { 
-          target: "_blank", 
-          rel: "noopener noreferrer" 
+        {...(!isEmailLink && {
+          target: "_blank",
+          rel: "noopener noreferrer"
         })}
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-sky-800" />
@@ -53,11 +54,12 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: '关于我',
   description:
     '我是水木易，试图在代码与哲学之间寻找平衡，用技术创造有温度的世界。',
-}
+  path: '/about',
+})
 
 export default function About() {
   return (
@@ -74,12 +76,12 @@ export default function About() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100">
             产品经理 · 哲学硕士 · 国学命理探索者
-          </h2>
+          </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-            关于我：理科生，计算机科班出身，厌倦编程转读哲学硕士。受马克思“解释世界不如改变世界”启发，进入互联网做产品经理。大厂卷过，小厂混过，合伙创业折腾过。
+            关于我：理科生，计算机科班出身，厌倦编程转读哲学硕士。受马克思「解释世界不如改变世界」启发，进入互联网做产品经理。大厂卷过，小厂混过，合伙创业折腾过。
             </p>
             <p>
               正在探索：20年开始迷上国学命理，目前正在转型中，拥抱中年失业男人三件套：跨境电商/自媒体/独立产品。探索国学命理领域相关机会，并寻求AI与传统文化的结合与产品化落地。
@@ -88,7 +90,7 @@ export default function About() {
             我深信中华国学中蕴含着丰富的智慧宝藏，尤其在易学命理学与中医养生体系中，包含了对人与自然、身与心和谐共生的深刻洞察。我期望能够将源远流长的传统文化与前沿AI技术完美融合，打造出更多实用工具，帮助更多人把握自身命运，开创更健康、更和谐的人生。
             </p>
             <p>
-            在这里，我将与大家分享我的学习心得、深度思考和人生感悟，同时展示我正在开发的创新项目。我会持续更新内容，为大家带来新的见解和发现。 
+            在这里，我将与大家分享我的学习心得、深度思考和人生感悟，同时展示我正在开发的创新项目。我会持续更新内容，为大家带来新的见解和发现。
             </p>
             <p>
             如果你对我在AI与中华国学交融领域的探索感兴趣，特别是在易学命理或中医养生方面有所思考，诚挚欢迎与我交流切磋。期待能与你一同探讨如何让AI技术为中国传统文化注入新的活力，共同传承和创新这份宝贵的文化遗产。

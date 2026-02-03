@@ -1,9 +1,10 @@
-import { type Metadata } from 'next'
 import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { projects } from '@/lib/projects'
+import { generatePageMetadata } from '@/lib/seo'
+import type { Metadata } from 'next'
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -16,10 +17,11 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
-}
+export const metadata: Metadata = generatePageMetadata({
+  title: '项目作品',
+  description: '我开发的一些应用、工具和项目作品，包括时辰养生、禅番茄等。',
+  path: '/projects',
+})
 
 export default function Projects() {
   return (
@@ -38,7 +40,8 @@ export default function Projects() {
                 src={project.logo}
                 alt=""
                 className="h-12 w-12"
-                unoptimized
+                width={48}
+                height={48}
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
