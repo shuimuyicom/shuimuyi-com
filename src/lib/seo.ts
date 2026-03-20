@@ -23,7 +23,7 @@ export const siteConfig = {
   // 社交链接
   links: {
     twitter: 'https://twitter.com/ohmuyi',
-    github: 'https://github.com/shuimuyicom',
+    github: 'https://github.com/ohmuyi',
     blog: 'https://blog.shuimuyi.com',
   },
 
